@@ -4,17 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CandidateSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            CandidateSeeder::class,
-        ]);
+        \App\Models\Candidate::factory(10)->create();
+
     }
 }
