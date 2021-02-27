@@ -42,8 +42,19 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
+            'hash' => false,
+        ],
+
+        'candidate' => [
+            'driver' => 'session',
+            'provider' => 'candidates',
+        ],
+
+        'api-candidate' => [
+            'driver' => 'passport',
+            'provider' => 'candidates',
             'hash' => false,
         ],
     ],
@@ -71,6 +82,11 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        'candidates' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Candidate::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -95,6 +111,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'candidates' => [
+            'provider' => 'candidates',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
