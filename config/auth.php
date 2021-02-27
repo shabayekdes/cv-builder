@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'passport',
+            'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
@@ -53,7 +53,7 @@ return [
         ],
 
         'api-candidate' => [
-            'driver' => 'passport',
+            'driver' => 'token',
             'provider' => 'candidates',
             'hash' => false,
         ],
@@ -116,12 +116,6 @@ return [
             'throttle' => 60,
         ],
 
-        'candidates' => [
-            'provider' => 'candidates',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
     ],
 
     /*
