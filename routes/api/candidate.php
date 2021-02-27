@@ -16,3 +16,7 @@ use App\Http\Controllers\CandidateApi\AuthController;
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+
+Route::middleware(['auth:api-candidate'])->group(function () {
+    Route::get('/', [AuthController::class, 'getCandidateInfo']);
+});

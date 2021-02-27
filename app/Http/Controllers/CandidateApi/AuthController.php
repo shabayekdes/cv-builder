@@ -68,6 +68,17 @@ class AuthController extends BaseController
         } else {
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
         }
+    }
 
+    /**
+     * Candidate info api
+     *
+     * @return void
+     */
+    public function getCandidateInfo()
+    {
+        $candidate = auth('api-candidate')->user();
+
+        return $this->sendResponse($candidate, 'Candidate info');
     }
 }
