@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('candidate.profile');
     }
 
     /**
@@ -46,7 +46,6 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
