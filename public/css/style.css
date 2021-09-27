@@ -1,0 +1,99 @@
+body{
+    margin:0px;
+    background:#F0F8FF;
+}
+.navbar-white a{
+    color: #858585;
+}
+.navbar-white {
+    background-color: #fff;
+    border-color: #e7e7e7;
+}
+
+.btn.visible-xs {
+    display: inline-block !important;
+}
+
+.page-content{
+  margin-top: 90px;
+  margin-bottom: 70px;
+}
+
+/*============= top navbar =================*/
+.navbar {
+    padding-top: 15px;
+    border: 0;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+
+.navbar-transparent .navbar-brand, [class*="navbar-ct"] .navbar-brand {
+    color: #FFFFFF;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+.navbar .navbar-brand {
+    font-weight: 600;
+    margin: 5px 0px;
+    padding: 20px 15px;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-transparent .navbar-nav > li > a:not(.btn), 
+.navbar-transparent .navbar-nav > li > a.btn-default, 
+[class*="navbar-ct"] .navbar-nav > li > a:not(.btn), 
+[class*="navbar-ct"] .navbar-nav > li > a.btn-default {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.navbar .navbar-nav > li > a {
+    padding: 10px 15px;
+    margin: 15px 3px;
+}
+.card {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e5e9f2;
+    border-radius: .2rem;
+}
+.card-header:first-child {
+    border-radius: calc(.2rem - 1px) calc(.2rem - 1px) 0 0;
+}
+.card-header {
+    border-bottom-width: 1px;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    color: inherit;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e9f2;
+}
