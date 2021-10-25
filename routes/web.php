@@ -22,7 +22,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/profile/edit', [ProfileController::class, 'edit']);
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 require __DIR__.'/auth.php';

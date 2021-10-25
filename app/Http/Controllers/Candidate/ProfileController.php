@@ -46,6 +46,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
+        return view('profile.show');
     }
 
     /**
@@ -55,19 +56,23 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        $user = auth()->user();
+        return view('profile.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        $user->update($request->all());
+
+        return redirect()->route('profile.edit')->with('success', 'Profile updated successfully');
     }
 
     /**
