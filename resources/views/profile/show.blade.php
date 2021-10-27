@@ -103,11 +103,11 @@
                         </div>
 
                         <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experiance</h2>
-                        @foreach ($candidate->works as $work)
+                        @foreach ($candidate->experiances as $experiance)
                             <div class="work-exp">
-                                <h6>{{ $work->title }} <span>2008-2011</span></h6>
-                                <i>{{ $work->company_name }}</i>
-                                <p>{{ $work->description }}</p>
+                                <h6>{{ $experiance->title }} <span>2008-2011</span></h6>
+                                <i>{{ $experiance->company_name }}</i>
+                                <p>{{ $experiance->description }}</p>
                                 {{-- <ul>
                                     <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
                                     <li><i class="far fa-hand-point-right"></i> Sorem dolor sit amet, consectetur. </li>

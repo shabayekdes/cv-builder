@@ -47,7 +47,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $candidate = Candidate::with('works')->findOrFail($id);
+        $candidate = Candidate::with('experiances')->findOrFail($id);
         return view('profile.show', compact('candidate'));
     }
 
