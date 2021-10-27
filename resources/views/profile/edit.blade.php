@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="h3 mb-3">Settings</h1>
+<h1 class="h3 mb-3">Edit Profile</h1>
 <div class="row">
     <div class="col-md-5 col-xl-4">
 
@@ -65,21 +65,27 @@
                         <h5 class="card-title mb-0">Public info</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="{{ route('profile.update') }}">
+                            @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <label for="inputFirstName">First name</label>
-                                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
+                                        <label for="first_name">First name</label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name" value="{{ $user->first_name }}" placeholder="First name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputLastName">Last name</label>
-                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+                                        <label for="last_name">Last name</label>
+                                        <input type="text" class="form-control" name="last_name" id="last_name" value="{{ $user->last_name }}" placeholder="Last name">
                                     </div>
                                     <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email" value="{{ $user->email }}" placeholder="Email">
+                                    </div>
+                                    {{-- <div class="form-group">
                                         <label for="inputUsername">Username</label>
                                         <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                                 <div class="col-md-4">
@@ -95,11 +101,7 @@
 
                             <div class="form-group">
                                 <label for="inputUsername">Biography</label>
-                                <textarea rows="2" class="form-control" id="inputBio" placeholder="Tell something about yourself"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                <textarea rows="2" class="form-control" id="inputBio" placeholder="Tell something about yourself">{{ $user->bio }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Address</label>

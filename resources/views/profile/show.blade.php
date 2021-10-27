@@ -19,8 +19,8 @@
                 <div class="col-md-4 left-co">
                     <div class="left-side">
                         <div class="profile-info">
-                            <img src="/profile/images/profile.jpg" alt="">
-                            <h3>Jonney Anderson</h3>
+                            <img src="{{ $candidate->profile_photo_path }}" alt="">
+                            <h3>{{ $candidate->name }}</h3>
                             <span>Web Designer</span>
                         </div>
                         <h4 class="ltitle">Contact</h4>
@@ -84,12 +84,12 @@
                 <div class="col-md-8 rt-div">
                     <div class="rit-cover">
                         <div class="hotkey">
-                            <h1 class="">Jonney Anderson </h1>
+                            <h1 class="">{{ $candidate->name }}</h1>
                             <small>Web Designer</small>
                         </div>
                         <h2 class="rit-titl"><i class="far fa-user"></i> Profile</h2>
                         <div class="about">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan purus enim, a vestibulum est tristique sit amet. Suspendisse nibh nisl, imperdiet sit amet mi vitae, elementum elementum nibh. Vivamus vitae eros malesuada, convallis dolor malesuada, lobortis ex. Sed cursus augue risus, ac semper est consectetur vitae. Praesent consequat metus sit amet rhoncus luctus.</p>
+                            <p>{{ $candidate->bio }}</p>
                             <div class="btn-ro row no-margin">
                                 <ul class="btn-link">
                                     <li>
@@ -103,35 +103,19 @@
                         </div>
 
                         <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experiance</h2>
-                        <div class="work-exp">
-                            <h6>Junior Software Developer <span>2008-2011</span></h6>
-                            <i>Microsoft / United States</i>
-                            <ul>
-                                <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                                <li><i class="far fa-hand-point-right"></i> Sorem dolor sit amet, consectetur. </li>
-                                <li><i class="far fa-hand-point-right"></i> Porem ipsum sit amet, consectetur adipiscing </li>
-                            </ul>
-                        </div>
-                        <div class="work-exp">
-                            <h6>Junior Software Developer <span>2008-2011</span></h6>
-                            <i>Microsoft / United States</i>
-                            <ul>
-                                <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                                
-                                <li><i class="far fa-hand-point-right"></i> Sed cursus augue risus, ac semper est consectetur vitae </li>
-                            </ul>
-                        </div>
-                        <div class="work-exp">
-                            <h6>Junior Software Developer <span>2008-2011</span></h6>
-                            <i>Microsoft / United States</i>
-                            <ul>
-                                <li><i class="far fa-hand-point-right"></i> Praesent consequat metus sit amet rhoncus luctus.
+                        @foreach ($candidate->works as $work)
+                            <div class="work-exp">
+                                <h6>{{ $work->title }} <span>2008-2011</span></h6>
+                                <i>{{ $work->company_name }}</i>
+                                <p>{{ $work->description }}</p>
+                                {{-- <ul>
+                                    <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
+                                    <li><i class="far fa-hand-point-right"></i> Sorem dolor sit amet, consectetur. </li>
+                                    <li><i class="far fa-hand-point-right"></i> Porem ipsum sit amet, consectetur adipiscing </li>
+                                </ul> --}}
+                            </div>
+                        @endforeach
 
-                                </li>
-                                <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur. </li>
-                                
-                            </ul>
-                        </div>
 
                         <h2 class="rit-titl"><i class="fas fa-graduation-cap"></i> Education</h2>
                         <div class="education">

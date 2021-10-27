@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Candidate;
 
-use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
@@ -46,7 +47,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        return view('profile.show');
+        $candidate = Candidate::with('works')->findOrFail($id);
+        return view('profile.show', compact('candidate'));
     }
 
     /**
