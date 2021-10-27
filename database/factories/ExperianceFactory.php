@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Work;
+use App\Models\Experiance;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class WorkFactory extends Factory
+class ExperianceFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Work::class;
+    protected $model = Experiance::class;
 
     /**
      * Define the model's default state.

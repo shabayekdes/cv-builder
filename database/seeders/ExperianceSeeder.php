@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Work;
+use App\Models\Experiance;
 use Illuminate\Database\Seeder;
 
-class WorkSeeder extends Seeder
+class ExperianceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,7 @@ class WorkSeeder extends Seeder
      */
     public function run()
     {
-        Work::factory(30)->create();
+        Experiance::factory(30)->create();
+
     }
 }

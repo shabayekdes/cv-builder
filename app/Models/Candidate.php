@@ -58,8 +58,8 @@ class Candidate extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function works()
+    public function experiances()
     {
-        return $this->hasMany(Work::class);
+        return $this->hasMany(Experiance::class);
     }
 }
