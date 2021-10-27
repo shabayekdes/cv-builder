@@ -21,6 +21,7 @@ class CreateCandidatesTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->text('profile_photo_path')->nullable();
+            $table->text('bio')->nullable();
             $table->timestamps();
         });
     }
